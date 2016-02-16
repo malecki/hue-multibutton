@@ -3,7 +3,7 @@
 I have a [tap switch](http://www2.meethue.com/en-us/productdetail/philips-hue-tap-switch).
 Using almost any of the Philips native apps, you can
 program each button to do one thing. That’s stupid: _obviously every button
-should be toggle among several states_.
+should move among several states in sequence_.
 
 It turns out the Hue api provides a not-terrible way to do this, but
 setting them up is pretty painful. You have to set `conditions` for several
