@@ -1,0 +1,8 @@
+<div>
+    <form ng-submit="hue.handle('initialize')">
+        <input width=12 ng-model="hue.host"></input>
+        <input width=30 ng-model="hue.username"></input>
+        <button type="submit">OK</button>
+    </form>
+    <i ng-if="hue.state==='initialized'" class="fa fa-check-circle"></i>
+</div>
