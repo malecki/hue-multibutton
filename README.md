@@ -10,7 +10,7 @@ setting them up is pretty painful. You have to set `conditions` for several
 `rules` and `actions` for each that set `sensor` states in addition to just
 changing the lights.
 
-### Furthermore, the api has a number of …peculiarities:
+### Hue API …peculiarities:
 
 1. everything, including errors, returns `200`. (:fire:)
 1. there’s a character length limit on the payload for rules, and it counts
@@ -51,3 +51,15 @@ I’ve seen. It’s current (1.11), and it uses modern javascript. Many (most? a
  I’d love to support it here. I am also wary of this option, as the
  [Hue labs](http://labs.meethue.com/) randomly wants me to re-auth some of
  the time and now I have like 5 huelabs users on my bridge.
+ 
+## Try it yourself
+
+```
+npm install
+gulp browsersync
+```
+
+All it does right now is log in to a bridge, if you give it an ip and a valid
+‘username’ (a hash; hardly a name since it generates it and you can’t change
+it). It stores these in localstorage so you don’t have to type them
+in the future.
