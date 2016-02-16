@@ -45,7 +45,9 @@ I’ve seen. It’s current (1.11), and it uses modern javascript. Many (most? a
  author.
 
  To date I have not worked with the `discover` parts of Huejay that use udp; browserify
- might be able to handle it with (browserify-dgram)[https://github.com/alexstrat/dgram-browserify]
+ might be able to handle it with [browserify-dgram](https://github.com/alexstrat/dgram-browserify)
   but I don’t care at the moment. At present, if you want to program a tap
  switch yourself, getting a user hash for your bridge is not my concern, though
- I’d love to support it here.
+ I’d love to support it here. I am also wary of this option, as the
+ [Hue labs](http://labs.meethue.com/) randomly wants me to re-auth some of
+ the time and now I have like 5 huelabs users on my bridge.
