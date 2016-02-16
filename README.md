@@ -34,6 +34,27 @@ and remembering button events is tedious; including double conditions for them
   3. is `17`
   4. is `18`
 
+ 1. Oh by the way, the dimmer switch is completely different! How FuN! ¡!
+
+```
+1000	INITIAL_PRESS	Button 1 (ON)
+1001	HOLD
+1002	SHORT_RELEASED
+1003	LONG_RELEASED
+2000	INITIAL_PRESS	Button 2 (DIM UP)
+2001	HOLD
+2002	SHORT_RELEASED
+2003	LONG_RELEASED
+3000	INITIAL_PRESS	Button 3 (DIM DOWN)
+3001	HOLD
+3002	SHORT_RELEASED
+3003	LONG_RELEASED
+4000	INITIAL_PRESS	Button 4 (OFF)
+4001	HOLD
+4002	SHORT_RELEASED
+4003	LONG_RELEASED 
+```
+
 ### Ramblings
 
 [Huejay](https://github.com/sqmk/huejay) is the only complete client library
