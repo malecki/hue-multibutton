@@ -9,9 +9,6 @@ function LoginDirective(Hue) {
         link: function(scope) {
             let hue = new Hue()
             scope.hue = hue
-            hue.on('transition', function(){
-                scope.$digest()
-            })
         }
     }
 }

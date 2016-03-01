@@ -1,8 +1,14 @@
 <div>
-    <form ng-submit="hue.handle('initialize')">
-        <input width=12 ng-model="hue.host"></input>
-        <input width=30 ng-model="hue.username"></input>
-        <button type="submit">OK</button>
+    <form class="form-inline" ng-submit="hue.handle('initialize')">
+        <div class="input-group">
+            <span class="input-group-addon" id="bridge-ip-label">Bridge IP</span>
+            <input aria-describedby="bridge-ip-label" class="form-control" width=12 ng-model="hue.host"></input>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="username-label">User hash</span>
+            <input aria-describedby="username-label" class="form-control" width=30 ng-model="hue.username"></input>
+        </div>
+        <button class="btn" type="submit" ng-class="{'btn-primary': hue.state==='uninitialized', 'btn-success': hue.state==='initialized'}">OK</button>
     </form>
-    <i ng-if="hue.state==='initialized'" class="fa fa-check-circle"></i>
+    <add-rule ng-if="hue.state==='initialized'"></add-rule>
 </div>

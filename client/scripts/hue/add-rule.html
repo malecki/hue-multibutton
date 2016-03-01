@@ -1,0 +1,34 @@
+<div class="new-rule">
+    <form ng-submit="hue.handle('add-rule')"
+        <label><span class="label label-default">Switch</span><select class="form-control" ng-options="tapSwitch as tapSwitch.name for tapSwitch in hue.tapSwitches track by tapSwitch.id" ng-model="hue.selectedSwitch"></select></label>
+        <label><span class="label label-default">Button</span><select class="form-control" ng-options="buttonEvent as buttonEvent.label for buttonEvent in buttonEvents track by buttonEvent.id" ng-model="buttonEvent" ng-change="filterButtonRules(buttonEvent.id)"></select></label>
+        <h3>Rules defined for button <span class="label label-info">{{ buttonEvent.label }}</span></h3>
+            <ul>
+                <li ng-repeat="rule in filteredRules">
+                    {{ rule.rule.id }} {{ rule.conditions }} {{ rule.actions }} ({{rule.rule}})
+                </li>
+            </ul>
+        <ul class="actions list-group">
+            <li class="light-action list-group-item" ng-repeat="light in hue.lights">
+                <span class="label label-default">{{ light.id }}</span>{{ light.brightness }} {{ light.colorMode }} {{light.on}}
+                <i ng-click="hue.removeLight(light.id)" class="fa fa-times"></i>
+            </li>
+            <button ng-click="hue.getLights()" class="btn"><li class="add-current-state"><i class="fa fa-eyedropper"></i> Resample light state</button></li>
+        </ul>
+        <h3>Defined state sensors:</h3>
+        <div class="list-group">
+            <button class="list-group-item disabled" type="button" ng-repeat="stateSensor in hue.stateSensors">
+            {{ stateSensor.id }} ({{ stateSensor.name }})
+            </button>
+            <!-- <button type="button" class="list-group-item"><i class="fa fa-magic"></i> Add a sensor</button> -->
+        </div>
+        <button ng-click="hue.addLinkedSensor()"><i class="fa fa-puzzle-piece"> Link a sensor</i></button>
+        <ul>
+            <li ng-repeat="s in hue.linkedSensors">
+                <label>State Sensor <input type="number" ng-model="s.id"/></label>
+                <label>Old <input type="number" ng-model="s.conditionValue" /></label>
+                <label>New <input type="number" ng-model="s.actionValue"/></label>
+            </li>
+        </ul>
+    </form>
+</div>

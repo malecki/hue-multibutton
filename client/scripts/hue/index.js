@@ -17,6 +17,13 @@ module.exports = function(namespace) {
     });
     mod.factory('Hue', require('./hue'))
     mod.directive('login', require('./login-directive'))
-    
+    mod.constant('BUTTON_EVENTS', [
+        {label: 1, id: 34 },
+        {label: 2, id: 16 },
+        {label: 3, id: 17 },
+        {label: 4, id: 18 }
+    ])
+    mod.directive('addRule', require('./add-rule-directive'))
+
     return mod;
 };
